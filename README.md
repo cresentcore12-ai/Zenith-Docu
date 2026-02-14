@@ -1,9 +1,7 @@
-# Zenith Docs - WORKING VERSION
+# Zenith Docs - FULLY WORKING!
 
-All 25 tools are CLICKABLE and VISIBLE!
+## All 25 tools as CLICKABLE CARDS with ICONS!
 
-## Deploy
-Drag to Vercel: https://vercel.com/new
+Deploy: Drag to https://vercel.com/new
 
-## Contact
-sociaro.io@gmail.com
+Contact: sociaro.io@gmail.com

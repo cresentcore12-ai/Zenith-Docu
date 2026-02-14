@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Docs - 25 Free Tools</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f7f5f2; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        .header { background: white; padding: 1rem 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem; font-weight: 700; }
+        .header-right { display: flex; gap: 1rem; align-items: center; }
+        .usage { background: #FF5252; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; }
+        .contact-link { color: #666; text-decoration: none; }
+        
+        /* Hero */
+        .hero { background: white; padding: 3rem 0; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero p { color: #666; font-size: 1.1rem; }
+        
+        /* Tools */
+        .tools { padding: 2rem 0; }
+        .category-title { font-size: 1.5rem; margin: 2rem 0 1rem 0; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .tool-card { background: white; padding: 2rem 1rem; border-radius: 8px; text-align: center; cursor: pointer; border: 1px solid #e0e0e0; transition: all 0.3s; }
+        .tool-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-color: #FF5252; }
+        .tool-icon { font-size: 3rem; margin-bottom: 0.5rem; }
+        .tool-title { font-weight: 600; margin-bottom: 0.25rem; }
+        .tool-desc { font-size: 0.875rem; color: #666; }
+        
+        /* Modal */
+        .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+        .modal.active { display: flex; }
+        .modal-content { background: white; padding: 2rem; border-radius: 12px; max-width: 500px; width: 90%; position: relative; }
+        .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 2rem; cursor: pointer; }
+        .upload-zone { border: 2px dashed #ccc; padding: 3rem 2rem; text-align: center; border-radius: 8px; cursor: pointer; margin: 1rem 0; }
+        .upload-zone:hover { border-color: #FF5252; background: #fff5f5; }
+        .btn { width: 100%; padding: 1rem; background: #FF5252; color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 1rem; }
+        .btn:hover { background: #e04848; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .result { background: #f0f9ff; border: 1px solid #b3e0ff; padding: 2rem; border-radius: 8px; margin-top: 1rem; text-align: center; }
+        .hidden { display: none; }
+        
+        /* Footer */
+        footer { background: white; padding: 3rem 0; margin-top: 3rem; text-align: center; }
+        footer a { color: #FF5252; text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .tools-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span>🚀</span>
+                <span>Zenith Docs</span>
+            </div>
+            <div class="header-right">
+                <span class="usage" id="usage">5/5 uses today</span>
+                <a href="mailto:sociaro.io@gmail.com" class="contact-link">📧 Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>25 Free PDF & Image Tools</h1>
+            <p>Professional tools for documents and images. 5 free uses per day. No signup required.</p>
+        </div>
+    </section>
+
+    <section class="tools">
+        <div class="container">
+            <h2 class="category-title">📄 PDF Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card" onclick="openTool('PDF Merge', '📄', 'Combine multiple PDFs')">
+                    <div class="tool-icon">📄</div>
+                    <div class="tool-title">PDF Merge</div>
+                    <div class="tool-desc">Combine PDFs</div>
+                </div>
+                <div class="tool-card" onclick="openTool('PDF Split', '✂️', 'Extract specific pages')">
+                    <div class="tool-icon">✂️</div>
+                    <div class="tool-title">PDF Split</div>
+                    <div class="tool-desc">Extract pages</div>
+                </div>
+                <div class="tool-card" onclick="openTool('PDF Compress', '🗜️', 'Reduce file size')">
+                    <div class="tool-icon">🗜️</div>
+                    <div class="tool-title">PDF Compress</div>
+                    <div class="tool-desc">Reduce size</div>
+                </div>
+                <div class="tool-card" onclick="openTool('PDF Rotate', '🔄', 'Rotate pages')">
+                    <div class="tool-icon">🔄</div>
+                    <div class="tool-title">PDF Rotate</div>
+                    <div class="tool-desc">Rotate pages</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Watermark', '🏷️', 'Add watermark')">
+                    <div class="tool-icon">🏷️</div>
+                    <div class="tool-title">Watermark</div>
+                    <div class="tool-desc">Add watermark</div>
+                </div>
+                <div class="tool-card" onclick="openTool('PDF to Text', '📝', 'Extract text')">
+                    <div class="tool-icon">📝</div>
+                    <div class="tool-title">PDF to Text</div>
+                    <div class="tool-desc">Extract text</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Delete Pages', '🗑️', 'Remove pages')">
+                    <div class="tool-icon">🗑️</div>
+                    <div class="tool-title">Delete Pages</div>
+                    <div class="tool-desc">Remove pages</div>
+                </div>
+                <div class="tool-card" onclick="openTool('PDF to Images', '📸', 'Convert to images')">
+                    <div class="tool-icon">📸</div>
+                    <div class="tool-title">PDF→Images</div>
+                    <div class="tool-desc">Convert pages</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Metadata', 'ℹ️', 'Edit PDF info')">
+                    <div class="tool-icon">ℹ️</div>
+                    <div class="tool-title">Metadata</div>
+                    <div class="tool-desc">Edit info</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Protect PDF', '🔒', 'Add password')">
+                    <div class="tool-icon">🔒</div>
+                    <div class="tool-title">Protect PDF</div>
+                    <div class="tool-desc">Add password</div>
+                </div>
+            </div>
+
+            <h2 class="category-title">🖼️ Image Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card" onclick="openTool('Compress Image', '⚡', 'Optimize images')">
+                    <div class="tool-icon">⚡</div>
+                    <div class="tool-title">Compress Image</div>
+                    <div class="tool-desc">Optimize</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Resize Image', '📐', 'Change dimensions')">
+                    <div class="tool-icon">📐</div>
+                    <div class="tool-title">Resize Image</div>
+                    <div class="tool-desc">Change size</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Convert Image', '🔄', 'Change format')">
+                    <div class="tool-icon">🔄</div>
+                    <div class="tool-title">Convert Image</div>
+                    <div class="tool-desc">PNG/JPG/WebP</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Crop Image', '✂️', 'Crop to area')">
+                    <div class="tool-icon">✂️</div>
+                    <div class="tool-title">Crop Image</div>
+                    <div class="tool-desc">Crop area</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Images to PDF', '📄', 'Combine to PDF')">
+                    <div class="tool-icon">📄</div>
+                    <div class="tool-title">Images→PDF</div>
+                    <div class="tool-desc">Make PDF</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Batch Compress', '🗜️', 'Compress many')">
+                    <div class="tool-icon">🗜️</div>
+                    <div class="tool-title">Batch Compress</div>
+                    <div class="tool-desc">Many images</div>
+                </div>
+            </div>
+
+            <h2 class="category-title">📝 Document Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card" onclick="openTool('Resume to Portfolio', '🌐', 'Create website')">
+                    <div class="tool-icon">🌐</div>
+                    <div class="tool-title">Resume→Portfolio</div>
+                    <div class="tool-desc">Create site</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Proposal', '📋', 'Generate proposal')">
+                    <div class="tool-icon">📋</div>
+                    <div class="tool-title">Proposal</div>
+                    <div class="tool-desc">Generate</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Invoice', '💰', 'Generate invoice')">
+                    <div class="tool-icon">💰</div>
+                    <div class="tool-title">Invoice</div>
+                    <div class="tool-desc">Generate</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Text to PDF', '📝', 'Convert text')">
+                    <div class="tool-icon">📝</div>
+                    <div class="tool-title">Text→PDF</div>
+                    <div class="tool-desc">Convert</div>
+                </div>
+            </div>
+
+            <h2 class="category-title">🔧 Utility Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card" onclick="openTool('Bulk Rename', '📝', 'Rename files')">
+                    <div class="tool-icon">📝</div>
+                    <div class="tool-title">Bulk Rename</div>
+                    <div class="tool-desc">Rename many</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Word Counter', '📊', 'Count words')">
+                    <div class="tool-icon">📊</div>
+                    <div class="tool-title">Word Counter</div>
+                    <div class="tool-desc">Count words</div>
+                </div>
+                <div class="tool-card" onclick="openTool('QR Code', '📱', 'Generate QR')">
+                    <div class="tool-icon">📱</div>
+                    <div class="tool-title">QR Code</div>
+                    <div class="tool-desc">Generate QR</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Barcode', '🏷️', 'Generate barcode')">
+                    <div class="tool-icon">🏷️</div>
+                    <div class="tool-title">Barcode</div>
+                    <div class="tool-desc">Generate</div>
+                </div>
+                <div class="tool-card" onclick="openTool('Screenshot to PDF', '📸', 'Organize screenshots')">
+                    <div class="tool-icon">📸</div>
+                    <div class="tool-title">Screenshot→PDF</div>
+                    <div class="tool-desc">Organize</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="limitModal">
+        <div class="modal-content">
+            <h2>Daily Limit Reached</h2>
+            <p>You've used all <strong>5 free operations</strong> today.</p>
+            <p>Come back tomorrow for 5 more free uses!</p>
+            <button class="btn" onclick="closeLimitModal()">OK</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h3>Zenith Docs</h3>
+            <p>25 professional tools for PDF and images</p>
+            <p>100% free • No signup • Privacy-focused</p>
+            <p style="margin-top: 1rem;">📧 <a href="mailto:sociaro.io@gmail.com">sociaro.io@gmail.com</a></p>
+            <p style="margin-top: 2rem; color: #999; font-size: 0.85rem;">&copy; 2024 Zenith Docs</p>
+        </div>
+    </footer>
+
+    <script>
+        let usage = JSON.parse(localStorage.getItem('usage') || '{"count":0,"date":""}');
+        const today = new Date().toDateString();
+        if (usage.date !== today) {
+            usage = {count: 0, date: today};
+            localStorage.setItem('usage', JSON.stringify(usage));
+        }
+        document.getElementById('usage').textContent = `${Math.max(0, 5-usage.count)}/5 uses today`;
+
+        function openTool(title, icon, desc) {
+            if (usage.count >= 5) {
+                document.getElementById('limitModal').classList.add('active');
+                return;
+            }
+            
+            document.getElementById('modal').classList.add('active');
+            document.getElementById('modalBody').innerHTML = `
+                <h2 style="margin-bottom: 1rem;">${icon} ${title}</h2>
+                <p style="color: #666; margin-bottom: 1rem;">${desc}</p>
+                <div class="upload-zone" onclick="document.getElementById('file').click()">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">📁</div>
+                    <div style="font-weight: 600;">Click to upload file</div>
+                    <div style="font-size: 0.9rem; color: #999;">or drag and drop</div>
+                </div>
+                <input type="file" id="file" style="display:none" onchange="handleFile()">
+                <button class="btn" id="processBtn" onclick="process()" disabled>Process File</button>
+                <div id="result"></div>
+            `;
+        }
+
+        let selectedFile = null;
+        function handleFile() {
+            selectedFile = document.getElementById('file').files[0];
+            if (selectedFile) {
+                document.querySelector('.upload-zone div:nth-child(2)').textContent = selectedFile.name;
+                document.getElementById('processBtn').disabled = false;
+            }
+        }
+
+        function process() {
+            if (!selectedFile) return;
+            
+            document.getElementById('processBtn').disabled = true;
+            document.getElementById('processBtn').textContent = 'Processing...';
+            
+            setTimeout(() => {
+                usage.count++;
+                localStorage.setItem('usage', JSON.stringify(usage));
+                document.getElementById('usage').textContent = `${Math.max(0, 5-usage.count)}/5 uses today`;
+                
+                document.getElementById('result').innerHTML = `
+                    <div class="result">
+                        <div style="font-size: 3rem;">✅</div>
+                        <h3 style="color: #0077cc; margin: 1rem 0;">Success!</h3>
+                        <p><strong>File:</strong> ${selectedFile.name}</p>
+                        <p><strong>Size:</strong> ${(selectedFile.size/1024).toFixed(1)} KB</p>
+                        <p style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-radius: 6px; font-size: 0.9rem;">
+                            Demo mode. Contact <a href="mailto:sociaro.io@gmail.com" style="color: #856404;">sociaro.io@gmail.com</a> for backend.
+                        </p>
+                    </div>
+                `;
+                document.getElementById('processBtn').textContent = 'Process Another';
+                document.getElementById('processBtn').disabled = false;
+                selectedFile = null;
+            }, 1500);
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        function closeLimitModal() {
+            document.getElementById('limitModal').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeLimitModal();
+            }
+        });
+    </script>
+</body>
+</html>
