@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Docs - 25 Free PDF & Image Tools</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span style="font-size: 1.5rem;">🚀</span>
+                <span>Zenith Docs</span>
+            </div>
+            <div class="header-right">
+                <span class="usage-badge" id="usageBadge">5/5 uses today</span>
+                <a href="mailto:sociaro.io@gmail.com" class="contact-link">📧 Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>25 Free PDF & Image Tools</h1>
+            <p>Professional tools for documents and images. 5 free uses per day. No signup required.</p>
+        </div>
+    </section>
+
+    <section class="tools-section">
+        <div class="container">
+            <h2>All Tools</h2>
+            
+            <!-- PDF Tools -->
+            <h3 class="category-title">📄 PDF Tools</h3>
+            <div class="tools-grid">
+                <div class="tool-card" onclick="openTool('pdf-merge', '📄', 'PDF Merge', 'Combine multiple PDFs')">
+                    <div class="tool-icon">📄</div>
+                    <div class="tool-title">PDF Merge</div>
+                    <div class="tool-desc">Combine PDFs</div>
+                </div>
+                <div class="tool-card" onclick="openTool('pdf-split', '✂️', 'PDF Split', 'Extract pages')">
+                    <div class="tool-icon">✂️</div>
+                    <div class="tool-title">PDF Split</div>
+                    <div class="tool-desc">Extract pages</div>
+                </div>
+                <div class="tool-card" onclick="openTool('pdf-compress', '🗜️', 'PDF Compress', 'Reduce size')">
+                    <div class="tool-icon">🗜️</div>
+                    <div class="tool-title">PDF Compress</div>
+                    <div class="tool-desc">Reduce size</div>
+                </div>
+                <div class="tool-card" onclick="openTool('pdf-rotate', '🔄', 'PDF Rotate', 'Rotate pages')">
+                    <div class="tool-icon">🔄</div>
+                    <div class="tool-title">PDF Rotate</div>
+                    <div class="tool-desc">Rotate pages</div>
+                </div>
+                <div class="tool-card" onclick="openTool('pdf-watermark', '🏷️', 'Watermark', 'Add watermark')">
+                    <div class="tool-icon">🏷️</div>
+                    <div class="tool-title">Watermark</div>
+                    <div class="tool-desc">Add watermark</div>
+                </div>
+                <div class="tool-card" onclick="openTool('pdf-text', '📝', 'PDF to Text', 'Extract text')">
+                    <div class="tool-icon">📝</div>
+                    <div class="tool-title">PDF to Text</div>
+                    <div class="tool-desc">Extract text</div>
+                </div>
+                <div class="tool-card" onclick="openTool('pdf-delete', '🗑️', 'Delete Pages', 'Remove pages')">
+                    <div class="tool-icon">🗑️</div>
+                    <div class="tool-title">Delete Pages</div>
+                    <div class="tool-desc">Remove pages</div>
+                </div>
+                <div class="tool-card" onclick="openTool('pdf-images', '📸', 'PDF→Images', 'Convert pages')">
+                    <div class="tool-icon">📸</div>
+                    <div class="tool-title">PDF→Images</div>
+                    <div class="tool-desc">Convert to images</div>
+                </div>
+                <div class="tool-card" onclick="openTool('pdf-metadata', 'ℹ️', 'Metadata', 'Edit PDF info')">
+                    <div class="tool-icon">ℹ️</div>
+                    <div class="tool-title">Metadata</div>
+                    <div class="tool-desc">Edit PDF info</div>
+                </div>
+                <div class="tool-card" onclick="openTool('pdf-protect', '🔒', 'Protect', 'Add password')">
+                    <div class="tool-icon">🔒</div>
+                    <div class="tool-title">Protect PDF</div>
+                    <div class="tool-desc">Add password</div>
+                </div>
+            </div>
+
+            <!-- Image Tools -->
+            <h3 class="category-title">🖼️ Image Tools</h3>
+            <div class="tools-grid">
+                <div class="tool-card" onclick="openTool('img-compress', '⚡', 'Compress Image', 'Optimize images')">
+                    <div class="tool-icon">⚡</div>
+                    <div class="tool-title">Compress Image</div>
+                    <div class="tool-desc">Optimize images</div>
+                </div>
+                <div class="tool-card" onclick="openTool('img-resize', '📐', 'Resize Image', 'Change size')">
+                    <div class="tool-icon">📐</div>
+                    <div class="tool-title">Resize Image</div>
+                    <div class="tool-desc">Change dimensions</div>
+                </div>
+                <div class="tool-card" onclick="openTool('img-convert', '🔄', 'Convert Image', 'Change format')">
+                    <div class="tool-icon">🔄</div>
+                    <div class="tool-title">Convert Image</div>
+                    <div class="tool-desc">PNG/JPG/WebP</div>
+                </div>
+                <div class="tool-card" onclick="openTool('img-crop', '✂️', 'Crop Image', 'Crop to area')">
+                    <div class="tool-icon">✂️</div>
+                    <div class="tool-title">Crop Image</div>
+                    <div class="tool-desc">Crop to area</div>
+                </div>
+                <div class="tool-card" onclick="openTool('img-pdf', '📄', 'Images→PDF', 'Make PDF')">
+                    <div class="tool-icon">📄</div>
+                    <div class="tool-title">Images→PDF</div>
+                    <div class="tool-desc">Combine to PDF</div>
+                </div>
+                <div class="tool-card" onclick="openTool('batch', '🗜️', 'Batch Compress', 'Many images')">
+                    <div class="tool-icon">🗜️</div>
+                    <div class="tool-title">Batch Compress</div>
+                    <div class="tool-desc">Compress many</div>
+                </div>
+            </div>
+
+            <!-- Document Tools -->
+            <h3 class="category-title">📝 Document Tools</h3>
+            <div class="tools-grid">
+                <div class="tool-card" onclick="openTool('resume', '🌐', 'Resume→Portfolio', 'Create website')">
+                    <div class="tool-icon">🌐</div>
+                    <div class="tool-title">Resume→Portfolio</div>
+                    <div class="tool-desc">Create website</div>
+                </div>
+                <div class="tool-card" onclick="openTool('proposal', '📋', 'Proposal', 'Generate')">
+                    <div class="tool-icon">📋</div>
+                    <div class="tool-title">Proposal</div>
+                    <div class="tool-desc">Generate proposal</div>
+                </div>
+                <div class="tool-card" onclick="openTool('invoice', '💰', 'Invoice', 'Generate')">
+                    <div class="tool-icon">💰</div>
+                    <div class="tool-title">Invoice</div>
+                    <div class="tool-desc">Generate invoice</div>
+                </div>
+                <div class="tool-card" onclick="openTool('text-pdf', '📝', 'Text→PDF', 'Convert')">
+                    <div class="tool-icon">📝</div>
+                    <div class="tool-title">Text→PDF</div>
+                    <div class="tool-desc">Convert text</div>
+                </div>
+            </div>
+
+            <!-- Utility Tools -->
+            <h3 class="category-title">🔧 Utility Tools</h3>
+            <div class="tools-grid">
+                <div class="tool-card" onclick="openTool('rename', '📝', 'Bulk Rename', 'Rename files')">
+                    <div class="tool-icon">📝</div>
+                    <div class="tool-title">Bulk Rename</div>
+                    <div class="tool-desc">Rename files</div>
+                </div>
+                <div class="tool-card" onclick="openTool('word', '📊', 'Word Counter', 'Count words')">
+                    <div class="tool-icon">📊</div>
+                    <div class="tool-title">Word Counter</div>
+                    <div class="tool-desc">Count words</div>
+                </div>
+                <div class="tool-card" onclick="openTool('qr', '📱', 'QR Code', 'Generate QR')">
+                    <div class="tool-icon">📱</div>
+                    <div class="tool-title">QR Code</div>
+                    <div class="tool-desc">Generate QR</div>
+                </div>
+                <div class="tool-card" onclick="openTool('barcode', '🏷️', 'Barcode', 'Generate')">
+                    <div class="tool-icon">🏷️</div>
+                    <div class="tool-title">Barcode</div>
+                    <div class="tool-desc">Generate barcode</div>
+                </div>
+                <div class="tool-card" onclick="openTool('screenshot', '📸', 'Screenshot→PDF', 'Organize')">
+                    <div class="tool-icon">📸</div>
+                    <div class="tool-title">Screenshot→PDF</div>
+                    <div class="tool-desc">Organize shots</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Limit Modal -->
+    <div class="modal" id="limitModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <h2>Daily Limit Reached</h2>
+            <p>You've used all <strong>5 free operations</strong> today.</p>
+            <p>Come back tomorrow for 5 more free uses!</p>
+            <button class="btn" onclick="closeLimitModal()">OK</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h3>Zenith Docs</h3>
+            <p>25 professional tools for PDF and images</p>
+            <p>100% free • No signup • Privacy-focused</p>
+            <h4>Contact</h4>
+            <p>📧 <a href="mailto:sociaro.io@gmail.com">sociaro.io@gmail.com</a></p>
+            <h4>Tools</h4>
+            <p>PDF • Image • Document • Utility</p>
+            <p>All tools work in your browser</p>
+            <p style="margin-top: 2rem; color: #999; font-size: 0.85rem;">&copy; 2024 Zenith Docs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
